@@ -189,6 +189,8 @@
             this.cmbNumber.Size = new System.Drawing.Size(58, 33);
             this.cmbNumber.TabIndex = 2;
             this.cmbNumber.SelectedIndexChanged += new System.EventHandler(this.cmbNumber_SelectedIndexChanged);
+            // initalize the selected number of players to 6
+            this.cmbNumber.SelectedIndex = 4;
             // 
             // lblPlayers
             // 

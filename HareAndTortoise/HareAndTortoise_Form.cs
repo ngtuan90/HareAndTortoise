@@ -173,6 +173,7 @@ namespace HareAndTortoise {
                     
                 
             }
+            HareAndTortoise_Game.Players.ResetBindings();
         }
 
         /// <summary>
@@ -206,24 +207,17 @@ namespace HareAndTortoise {
             }
         }
 
-        //public int GetInputComboBox() {
-        //    return Convert.ToInt32(cmbNumber.Text);
-        //}
-
         public int GetInputComboBox() {
-            //int index_6 = cmbNumber.FindString("6");
-            //cmbNumber.SelectedIndex = index_6;
-            int index = cmbNumber.FindString(cmbNumber.Text);
+            string numPlayers = cmbNumber.Text;
+            int index = cmbNumber.FindString(numPlayers);
+            // Set the selected index
             cmbNumber.SelectedIndex = index;
-            return cmbNumber.SelectedIndex;
+            return int.Parse(numPlayers);
         }
 
         private void cmbNumber_SelectedIndexChanged(object sender, EventArgs e) {
-            //cmbNumber.SelectedIndex = cmbNumber.Items.IndexOf(6);
-
-
-            //cmbNumber.SelectedIndex = GetInputComboBox();
-            //HareAndTortoise_Game.NumberOfPlayers = cmbNumber.SelectedIndex;
+            var numPlayers = GetInputComboBox();
+            HareAndTortoise_Game.NumberOfPlayers = numPlayers;
         }
     }//end class 
 } //end namespace
